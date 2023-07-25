@@ -7,51 +7,87 @@
 </head>
 
 <body>
-    <h1>Foster Care Allowance Calculator</h1>
+    <div class="container">
+        <h1>Foster Care Allowance Calculator</h1>
 
-    <form id="care_allowance_form">
-        <span>How long have you been fostering?</span>
-        <br>
+        <form id="care_allowance_form">
 
-        <input type="radio" name="fostering-history" id="fostering-history-new" value="I am new to fostering" required>
-        <label for="fostering-history-new">I am new to fostering</label><br>
+            <!-- How long have you been fostering? -->
+            <div>
+                <span>How long have you been fostering?</span>
+                <br>
 
-        <input type="radio" id="fostering-history-over-12" name="fostering-history" value="Over 12 months" required>
-        <label for="fostering-history-over-12">Over 12 months</label><br>
-        <br>
-        <span>How many children are you caring for / do you plan on caring for?</span>
-        <br>
+                <input type="radio" name="fostering-history" id="fostering-history-new" value="I am new to fostering"
+                    required>
+                <label for="fostering-history-new">I am new to fostering</label><br>
 
-        <input type="radio" id="child-1" name="children-number" value="1" required>
-        <label for="child-1">1</label><br>
+                <input type="radio" id="fostering-history-over-12" name="fostering-history" value="Over 12 months"
+                    required>
+                <label for="fostering-history-over-12">Over 12 months</label><br>
+                <br>
+            </div>
 
-        <input type="radio" id="child-2" name="children-number" value="2" required>
-        <label for="child-2">2</label><br>
+            <div>
+                <!-- How many children are you caring for / do you plan on caring for? -->
+                <span>How many children are you caring for / do you plan on caring for?</span>
+                <br>
 
-        <input type="radio" id="child-3" name="children-number" value="3" required>
-        <label for="child-3">3</label><br>
+                <input type="radio" id="child-1" name="children-number" value="1" required>
+                <label for="child-1">1</label><br>
 
-        <input type="radio" id="child-4" name="children-number" value="4" required>
-        <label for="child-4">4</label><br>
+                <input type="radio" id="child-2" name="children-number" value="2" required>
+                <label for="child-2">2</label><br>
 
-        <br>
-        <span>What is the age range of these children?</span>
-        <br>
+                <input type="radio" id="child-3" name="children-number" value="3" required>
+                <label for="child-3">3</label><br>
 
-        <input type="radio" id="age-under-4" name="age-range" value="0-4" required>
-        <label for="age-under-4">0-4</label><br>
+                <input type="radio" id="child-4" name="children-number" value="4" required>
+                <label for="child-4">4</label><br>
 
-        <input type="radio" id="age-under-10" name="age-range" value="5-10" required>
-        <label for="age-under-10">5-10</label><br>
+                <br>
+            </div>
 
-        <input type="radio" id="age-under-17" name="age-range" value="11-17" required>
-        <label for="age-under-17">11-17</label><br>
-        <br>
+            <div>
+                <!-- What is the age range of these children? -->
+                <span>What is the age range of these children?</span>
+                <br>
 
-        <button type="submit" value="Submit">Select Option</button>
+                <input type="radio" id="age-under-4" name="age-range" value="0-4" required>
+                <label for="age-under-4">0-4</label><br>
 
-    </form>
+                <input type="radio" id="age-under-10" name="age-range" value="5-10" required>
+                <label for="age-under-10">5-10</label><br>
+
+                <input type="radio" id="age-under-17" name="age-range" value="11-17" required>
+                <label for="age-under-17">11-17</label><br>
+                <br>
+            </div>
+
+            <div>
+                <button type="submit" value="Submit">Submit Answers</button>
+            </div>
+
+        </form>
+
+        <div id="summary-grid" style="display:none;">
+            <div class="box left">
+                <h2>Your results</h2>
+                <p>Based on your selections of being <span class="experience-value" id="fostering-history-value"></span>
+                    foster parent with / planning on caring
+                    for <span class="amount-value" id="children-number-value"></span>
+                    between the ages of <span class="age-range-value" id="age-range-value"></span>.</p>
+            </div>
+            <div class="box right">
+                <p class="received-amount">You could receive around <span class="overall-value"
+                        id="overall-value"></span> per year
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src=" script.js"></script>
+
+
 </body>
 
 </html>

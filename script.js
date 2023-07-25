@@ -5,12 +5,16 @@
       .addEventListener("submit", function (event) {
         event.preventDefault();
 
+        document.getElementById("summary-grid").style.display = "block";
+
         const fosteringHistory =
           document.getElementsByName("fostering-history");
         const childrenNumber = document.getElementsByName("children-number");
+        const ageRange = document.getElementsByName("age-range");
 
         let selectedFosteringHistory = null;
         let selectedChildrenNumber = null;
+        let selectedAgeRange = null;
 
         for (const option of fosteringHistory) {
           if (option.checked) {
@@ -26,45 +30,41 @@
           }
         }
 
-        console.log("Selected Option:", selectedFosteringHistory);
+        for (const option of ageRange) {
+          if (option.checked) {
+            selectedAgeRange = option.value;
+            break;
+          }
+        }
 
         const starterAmount = ["£25,900", "£51,800", "£77,700", "£103,600"];
         const expertAmount = ["£29,000", "£58,000", "£87,000", "£116,000"];
 
-        // Check if the user selected the first option in fostering-history
         const isFirstOption =
           selectedFosteringHistory === fosteringHistory[0].value;
 
-        // Function to log the result based on the selected amount
+        // Update the values in the summary section
+        document.getElementById("fostering-history-value").textContent =
+          isFirstOption ? "a new" : "an experienced";
+        document.getElementById("children-number-value").textContent =
+          selectedChildrenNumber +
+          (selectedChildrenNumber === "1" ? " child" : " children");
+        document.getElementById("age-range-value").textContent =
+          selectedAgeRange;
+
         function logResult(amount) {
           console.log("You could receive around:", amount);
+          document.getElementById("overall-value").textContent = amount;
         }
 
-        // Check the selected option in children-number and log the result
         if (selectedChildrenNumber === childrenNumber[1].value) {
-          if (isFirstOption) {
-            logResult(starterAmount[1]);
-          } else {
-            logResult(expertAmount[1]);
-          }
+          logResult(isFirstOption ? starterAmount[1] : expertAmount[1]);
         } else if (selectedChildrenNumber === childrenNumber[2].value) {
-          if (isFirstOption) {
-            logResult(starterAmount[2]);
-          } else {
-            logResult(expertAmount[2]);
-          }
+          logResult(isFirstOption ? starterAmount[2] : expertAmount[2]);
         } else if (selectedChildrenNumber === childrenNumber[3].value) {
-          if (isFirstOption) {
-            logResult(starterAmount[3]);
-          } else {
-            logResult(expertAmount[3]);
-          }
+          logResult(isFirstOption ? starterAmount[3] : expertAmount[3]);
         } else {
-          if (isFirstOption) {
-            logResult(starterAmount[0]);
-          } else {
-            logResult(expertAmount[0]);
-          }
+          logResult(isFirstOption ? starterAmount[0] : expertAmount[0]);
         }
       });
   });
