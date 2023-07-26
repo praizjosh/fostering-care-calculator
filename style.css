@@ -5,6 +5,7 @@ $green: #007e90; */
 
 body {
   width: 100%;
+  background-color: #eefeff;
 }
 
 .container {
@@ -14,11 +15,85 @@ body {
   border-radius: 25px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   padding: 5rem;
+  background-color: #fff;
 }
 
 #care_allowance_form {
   display: flex;
   flex-direction: column;
+}
+
+#care_allowance_form span {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+/* #care_allowance_form input[type="radio"] { */
+#care_allowance_form label,
+#care_allowance_form input[type="radio"] {
+  cursor: pointer;
+}
+
+#care_allowance_form label {
+  padding: 25px 30px;
+  color: #363636;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  width: auto;
+  -webkit-box-shadow: 0 0 0 4px transparent;
+  -moz-box-shadow: 0 0 0 4px transparent;
+  box-shadow: 0 0 0 4px transparent;
+  -webkit-transition: background 0.5s ease, box-shadow 0.5s ease,
+    border 0.5s ease;
+  -moz-transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+  -o-transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+  transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+#care_allowance_form input:checked + label {
+  color: #363636;
+  background-color: #fff;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 4px #f7a811;
+  -moz-box-shadow: 0 0 0 4px #f7a811;
+  box-shadow: 0 0 0 4px #f7a811;
+}
+
+.inline-row {
+  margin: 0.8em 0;
+}
+
+.radio-grp {
+  display: flex;
+  margin: 0 0 1em 0;
+}
+.radio-grp > div:not(:last-child) {
+  display: flex;
+  margin: 0 2.5em 0 0;
+}
+.radio-grp-inline-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+button {
+  color: #3b3b3d;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #ffc73b;
+  border-radius: 5px;
+  border: none;
+  /* height: 65px; */
+  padding: 20px 15px;
+}
+button:hover {
+  background-color: #f2b61d;
 }
 
 #summary-grid {
