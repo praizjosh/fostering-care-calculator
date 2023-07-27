@@ -1,25 +1,27 @@
-/* @import url("https://fonts.googleapis.com/css?family=Inter:400'");
-$font: "Inter", sans-serif;
-$white: #fff;
-$green: #007e90; */
-
 body {
-  width: 100%;
   background-color: #eefeff;
 }
 
-.container {
+.cal_container {
   /* width: 100%; */
-  width: 1000px;
-  margin: 3rem auto;
-  border-radius: 25px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding: 5rem;
+  max-width: 1100px;
   background-color: #fff;
+
+  margin: 3em auto;
+  padding: 3em;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  box-shadow: 0px 2px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.container > div:not(:last-child) {
-  margin-bottom: 4em;
+.cal_container div {
+  /* 	margin: 2em 0; */
+}
+
+.cal_container p {
+  /* 	margin: 0; */
 }
 
 #care_allowance_form {
@@ -37,8 +39,8 @@ body {
 }
 
 #care_allowance_form label {
-  padding: 25px 30px;
-  color: #363636;
+  padding: 1.3em 2em;
+  color: var(--e-global-color-accent) !important;
   font-weight: 700;
   text-align: center;
   text-transform: none;
@@ -69,15 +71,16 @@ body {
 
 #care_allowance_form span {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.2em;
   margin: 0.2em 0;
   color: #1d57a5;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 25px;
 }
 
 #care_allowance_form .inline_row {
-  margin: 0.8em 0;
+  margin: 0.7em 0;
 }
 
 #care_allowance_form .radio_grp {
@@ -86,7 +89,8 @@ body {
 }
 #care_allowance_form .radio_grp > div:not(:last-child) {
   display: flex;
-  margin: 0 1.3em 0 0;
+  flex-wrap: wrap;
+  margin: 0 1em 0 0;
 }
 #care_allowance_form .radio_grp_inline_row {
   display: flex;
@@ -99,30 +103,29 @@ body {
 }
 
 .care_cta_btn {
-  color: #3b3b3d;
-  /* letter-spacing: 0em; */
-  font-size: 1.2rem;
+  background-color: green;
+  color: #fff;
+  letter-spacing: 0em;
+  font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  background-color: #f7a811;
   border-radius: 5px;
   border: none;
-  /* height: 65px; */
+  height: 65px;
   padding: 20px 15px;
 }
 .care_cta_btn:hover {
-  background-color: #fdb813;
+  color: #333;
+  background-color: yellow;
 }
 
 #summary_grid {
-  /* display: flex; */
-  /* grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); */
-  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f7f8fd;
   color: #363636;
-  /* justify-content: center;
-  align-items: center; */
   border-radius: 15px;
   padding: 20px;
   margin-top: 3em;
@@ -130,147 +133,91 @@ body {
 
 #summary_grid .result_grp {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: middle;
 }
-
 #summary_grid .box {
-  width: 48%; /* 48% to leave some space between the two boxes */
+  width: 48%;
 }
 
 #summary_grid h5 {
-  font-size: 2rem;
+  font-size: 1.6em;
   text-transform: uppercase;
   color: #3b3b3d;
-  line-height: 0;
+  letter-spacing: -1px;
 }
 
 #summary_grid .received_amount {
+  font-size: 0.8em;
   font-weight: 700;
-  color: #868585;
+  color: #666;
   text-transform: uppercase;
 }
 
 #summary_grid .received_amount span {
   display: block;
-  font-size: 3rem;
-  margin: 0.2em 0;
+  font-size: 2.1em;
+  margin: -0.2em 0;
   color: #1d57a5;
 }
 
 #summary_grid .text-small {
-  font-size: 1rem;
+  font-size: 0.67em;
 }
 
 .box {
-  /* background-color: #444; */
-  /* color: #fff; */
-  border-radius: 5px;
-  padding: 20px;
-  /* font-size: 150%; */
+  padding: 15px;
 }
 
-#summary_grid > div:is(:last-child) {
-  /* padding-top: 100px; */
-}
-
-/* .alt_action {
+.alt_action {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-} */
+  align-items: center;
+}
 .alt_action a {
+  font-size: 0.9em;
   margin-left: 1em;
 }
 
-/* 
-.middle {
-  width: 100%;
-  text-align: center;
-  h1 {
-    font-family: $font;
-    color: $white;
-  }
-  input[type="radio"] {
-    display: none;
-    &:checked {
-      + .box {
-        background-color: $green;
-        span {
-          color: white;
-          transform: translateY(70px);
-          &:before {
-            transform: translateY(0px);
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
-  .box {
-    width: 200px;
-    height: 200px;
-    background-color: $white;
-    transition: all 250ms ease;
-    will-change: transition;
-    display: inline_block;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    font-family: $font;
-    font-weight: 900;
-    &:active {
-      transform: translateY(10px);
-    }
-    span {
-      position: absolute;
-      transform: translate(0, 60px);
-      left: 0;
-      right: 0;
-      transition: all 300ms ease;
-      font-size: 1.5em;
-      user-select: none;
-      color: $green;
-      &:before {
-        font-size: 1.2em;
-        font-family: FontAwesome;
-        display: block;
-        transform: translateY(-80px);
-        opacity: 0;
-        transition: all 300ms ease-in-out;
-        font-weight: normal;
-        color: white;
-      }
-    }
-  }
-  .front-end {
-    span {
-      &:before {
-        content: "\f121";
-      }
-    }
-  }
-  .back-end {
-    span {
-      &:before {
-        content: "\f0f4";
-      }
-    }
-  }
+#enquiry_form {
+  margin-top: 3em;
+}
 
-  p {
-    color: $white;
-    font-family: $font;
-    font-weight: 400;
-    a {
-      text-decoration: underline;
-      font-weight: bold;
-      color: #fff;
-    }
-    span {
-      &:after {
-        content: "\f0e7";
-        font-family: FontAwesome;
-        color: yellow;
-      }
-    }
+/* Smartphones (portrait) ----------- */
+@media screen and (max-width: 600px) {
+  .cal_container {
+    padding: 1em;
   }
-} */
+  #care_allowance_form .radio_grp {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #care_allowance_form .radio_grp > div:not(:last-child) {
+    margin: 0 0.8em 0 0;
+  }
+  #care_allowance_form .radio_grp label {
+    display: flex;
+    margin: 0 0 1em 0;
+  }
+  #summary_grid .result_grp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #summary_grid .box {
+    width: 100%;
+    padding: 0;
+  }
+  .alt_action {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .alt_action a {
+    margin-left: 0;
+    margin-top: 0.3em;
+  }
+}
+/* Smartphones (portrait) ----------- */
