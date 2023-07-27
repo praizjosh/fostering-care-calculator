@@ -135,7 +135,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: middle;
 }
 #summary_grid .box {
   width: 48%;
