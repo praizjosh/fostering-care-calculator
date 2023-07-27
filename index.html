@@ -14,83 +14,116 @@
 
             <!-- How long have you been fostering? -->
             <span>How long have you been fostering?</span>
-            <div class="inline-row">
-                <div class="radio-grp">
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" name="fostering-history" id="fostering-history-new"
+            <div class="inline_row">
+                <div class="radio_grp">
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" name="fostering_history" id="fostering_history_new"
                             value="I am new to fostering" required>
-                        <label for="fostering-history-new">I am new to fostering</label>
+                        <label for="fostering_history_new">I am new to fostering</label>
                     </div>
 
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="fostering-history-over-12" name="fostering-history"
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="fostering_history_over_12" name="fostering_history"
                             value="Over 12 months" required>
-                        <label for="fostering-history-over-12">Over 12 months</label>
+                        <label for="fostering_history_over_12">Over 12 months</label>
                     </div>
                 </div>
             </div>
             <!-- How many children are you caring for / do you plan on caring for? -->
             <span>How many children are you caring for / do you plan on caring for?</span>
-            <div class="inline-row">
-                <div class="radio-grp">
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="child-1" name="children-number" value="1" required>
-                        <label for="child-1">1</label>
+            <div class="inline_row">
+                <div class="radio_grp">
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="child_1" name="children_number" value="1" required>
+                        <label for="child_1">1</label>
                     </div>
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="child-2" name="children-number" value="2" required>
-                        <label for="child-2">2</label>
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="child_2" name="children_number" value="2" required>
+                        <label for="child_2">2</label>
                     </div>
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="child-3" name="children-number" value="3" required>
-                        <label for="child-3">3</label>
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="child_3" name="children_number" value="3" required>
+                        <label for="child_3">3</label>
                     </div>
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="child-4" name="children-number" value="4" required>
-                        <label for="child-4">4</label>
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="child_4" name="children_number" value="4" required>
+                        <label for="child_4">4</label>
                     </div>
                 </div>
             </div>
 
             <!-- What is the age range of these children? -->
             <span>What is the age range of these children?</span>
-            <div class="inline-row">
-                <div class="radio-grp">
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="age-under-4" name="age-range" value="0-4" required>
-                        <label for="age-under-4">0-4</label>
+            <div class="inline_row">
+                <div class="radio_grp">
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="age_under_4" name="age_range" value="0-4" required>
+                        <label for="age_under_4">0-4</label>
                     </div>
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="age-under-10" name="age-range" value="5-10" required>
-                        <label for="age-under-10">5-10</label>
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="age_under_10" name="age_range" value="5-10" required>
+                        <label for="age_under_10">5-10</label>
                     </div>
-                    <div class="radio-grp-inline-row">
-                        <input type="radio" id="age-under-17" name="age-range" value="11-17" required>
-                        <label for="age-under-17">11-17</label>
+                    <div class="radio_grp_inline_row">
+                        <input type="radio" id="age_under_17" name="age_range" value="11-17" required>
+                        <label for="age_under_17">11-17</label>
                     </div>
                 </div>
             </div>
-            <div>
-                <button type="submit" value="Submit">Submit Answers</button>
-            </div>
-    </div>
-    </form>
 
-    <div id="summary-grid" style="display:none;">
-        <div class="box left">
-            <h2>Your results</h2>
-            <p>Based on your selections of being <span class="experience-value" id="fostering-history-value"></span>
-                foster parent with / planning on caring
-                for <span class="amount-value" id="children-number-value"></span>
-                between the ages of <span class="age-range-value" id="age-range-value"></span>.</p>
+            <!-- Final answer? -->
+            <div class="inline_row">
+                <span id="input_check">Happy with your final answers?</span>
+                <p>Don’t worry, you'll be able to go back and change these afterwards to see how your results could
+                    change
+                </p>
+            </div>
+            <div>
+                <button class="care_cta_btn" type="button" value="Submit" onclick="calculateAllowance()">Submit
+                    Answers</button>
+
+            </div>
+        </form>
+
+        <div id="summary_grid" style="display:none;">
+            <div class="result_grp">
+                <div class="box left">
+                    <h5>Your results</h5>
+                    <p>Based on your selections of being <span class="experience_value"
+                            id="fostering_history_value"></span>
+                        foster parent with / planning on caring
+                        for <span class="amount_value" id="children_number_value"></span>
+                        between the ages of <span class="age_range_value" id="age_range_value"></span>.
+                    </p>
+                </div>
+                <div class="box right">
+                    <p class="received_amount">You could receive around <span class="overall_value"
+                            id="overall_value"></span>
+                        per year
+                    </p>
+                    <p class="disclaimer text-small">Please note this is for guidance purposes only.</p>
+                </div>
+            </div>
+            <div class="box alt_action">
+                <button class="care_cta_btn" type="button" onclick="altAction()">Enquire Now</button>
+                <a href="#care_allowance_form">Try the Calculator again</a>
+            </div>
         </div>
-        <div class="box right">
-            <p class="received-amount">You could receive around <span class="overall-value" id="overall-value"></span>
-                per year
-            </p>
+
+        <div id="enquiry_form" style="display:none;">
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                [contact-form-7 id="1692" title="Home Page Form"]
+            </div>
         </div>
     </div>
-    </div>
+
 
     <script type="text/javascript" src=" script.js"></script>
 
