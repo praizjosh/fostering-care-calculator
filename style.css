@@ -1,5 +1,5 @@
 body {
-  background-color: #eefeff;
+  background-color: #ced1d1;
 }
 
 .cal_container {
@@ -82,6 +82,12 @@ body {
 #care_allowance_form .inline_row {
   margin: 0.7em 0;
 }
+
+/* Add the pointer-events property to the .inline_row class  */
+/* .inline_row:not(.active) {
+  pointer-events: none;
+  opacity: 0.4;
+} */
 
 #care_allowance_form .radio_grp {
   display: flex;

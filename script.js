@@ -1,6 +1,4 @@
 function calculateAllowance() {
-  document.getElementById("summary_grid").style.display = "block";
-
   const fosteringHistory = document.getElementsByName("fostering_history");
   const childrenNumber = document.getElementsByName("children_number");
   const ageRange = document.getElementsByName("age_range");
@@ -28,6 +26,25 @@ function calculateAllowance() {
       selectedAgeRange = option.value;
       break;
     }
+  }
+
+  // Check if all required fields are selected
+  if (
+    !selectedFosteringHistory ||
+    !selectedChildrenNumber ||
+    !selectedAgeRange
+  ) {
+    // Display warning for missing selection
+    const warningMessage = "Please select an option for all required fields.";
+    const warningElement = document.getElementById("warning_message");
+    warningElement.textContent = warningMessage;
+    warningElement.style.display = "block";
+    return; // Do not proceed with the calculation
+  } else {
+    // Hide any previous warning if present
+    const warningElement = document.getElementById("warning_message");
+    warningElement.style.display = "none";
+    document.getElementById("summary_grid").style.display = "block";
   }
 
   const starterAmount = ["£25,900", "£51,800", "£77,700", "£103,600"];
@@ -62,4 +79,10 @@ function calculateAllowance() {
 
 function altAction() {
   document.getElementById("enquiry_form").style.display = "block";
+}
+
+function restartAction() {
+  const form = document.getElementById("care_allowance_form");
+  form.reset();
+  document.getElementById("summary_grid").style.display = "none";
 }

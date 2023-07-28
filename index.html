@@ -9,17 +9,15 @@
 <body>
     <div class="cal_container">
         <form id="care_allowance_form">
-
             <!-- How long have you been fostering? -->
-            <span>How long have you been fostering?</span>
-            <div class="inline_row">
+            <div class="inline_row active">
+                <span>How long have you been fostering?</span>
                 <div class="radio_grp">
                     <div class="radio_grp_inline_row">
                         <input type="radio" name="fostering_history" id="fostering_history_new"
                             value="I am new to fostering" required>
                         <label for="fostering_history_new">I am new to fostering</label>
                     </div>
-
                     <div class="radio_grp_inline_row">
                         <input type="radio" id="fostering_history_over_12" name="fostering_history"
                             value="Over 12 months" required>
@@ -27,9 +25,10 @@
                     </div>
                 </div>
             </div>
+
             <!-- How many children are you caring for / do you plan on caring for? -->
-            <span>How many children are you caring for / do you plan on caring for?</span>
             <div class="inline_row">
+                <span>How many children are you caring for / do you plan on caring for?</span>
                 <div class="radio_grp">
                     <div class="radio_grp_inline_row">
                         <input type="radio" id="child_1" name="children_number" value="1" required>
@@ -51,8 +50,8 @@
             </div>
 
             <!-- What is the age range of these children? -->
-            <span>What is the age range of these children?</span>
             <div class="inline_row">
+                <span>What is the age range of these children?</span>
                 <div class="radio_grp">
                     <div class="radio_grp_inline_row">
                         <input type="radio" id="age_under_4" name="age_range" value="0-4" required>
@@ -73,13 +72,12 @@
             <div class="inline_row">
                 <span id="input_check">Happy with your final answers?</span>
                 <p>Don’t worry, you'll be able to go back and change these afterwards to see how your results could
-                    change
-                </p>
+                    change</p>
             </div>
             <div>
                 <button class="care_cta_btn" type="button" value="Submit" onclick="calculateAllowance()">Submit
                     Answers</button>
-
+                <div id="warning_message" style="display: none;"></div>
             </div>
         </form>
 
@@ -89,8 +87,8 @@
                     <h5>Your results</h5>
                     <p>Based on your selections of being <span class="experience_value"
                             id="fostering_history_value"></span>
-                        foster parent with / planning on caring
-                        for <span class="amount_value" id="children_number_value"></span>
+                        foster parent with / planning on caring for <span class="amount_value"
+                            id="children_number_value"></span>
                         between the ages of <span class="age_range_value" id="age_range_value"></span>.
                     </p>
                 </div>
@@ -104,17 +102,12 @@
             </div>
             <div class="alt_action">
                 <button class="care_cta_btn" type="button" onclick="altAction()">Enquire Now</button>
-                <a href="#care_allowance_form">Try the Calculator again</a>
+                <a href="#care_allowance_form" onclick="restartAction()">Try the Calculator again</a>
             </div>
         </div>
-
-        <div id="enquiry_form" style="display:none;">
-            <div>
-                [contact-form-7 id="1692" title="Home Page Form"]
-            </div>
-        </div>
-
     </div>
+
+
     <script type="text/javascript" src="script.js"></script>
 
 
